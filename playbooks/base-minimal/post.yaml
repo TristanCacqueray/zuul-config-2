@@ -1,3 +1,4 @@
+# This file is managed by ansible, do not edit directly
 ---
 - hosts: localhost
   roles:
@@ -25,7 +26,7 @@
         - import_role: name=buildset-artifacts-location
       vars:
         zuul_log_url: "https://ansible.softwarefactory-project.io/logs"
-        zuul_logserver_root: /var/www/logs
+        zuul_logserver_root: "{{ site_sflogs.path }}"
 
 - hosts: localhost
   ignore_errors: yes
